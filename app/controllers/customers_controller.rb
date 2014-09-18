@@ -29,6 +29,7 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+    @customer.user = current_user
 
     respond_to do |format|
       if @customer.save
