@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>So number:</strong>
+  <%= @sales_order.so_number %>
+</p>
+
+<p>
+  <strong>Vmax:</strong>
+  <%= @sales_order.vmax %>
+</p>
+
+<%= link_to 'Edit', edit_sales_order_path(@sales_order) %> |
+<%= link_to 'Back', sales_orders_path %>

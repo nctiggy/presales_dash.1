@@ -1,0 +1,27 @@
+<h1>Listing sales_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>So number</th>
+      <th>Vmax</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_orders.each do |sales_order| %>
+      <tr>
+        <td><%= sales_order.so_number %></td>
+        <td><%= sales_order.vmax %></td>
+        <td><%= link_to 'Show', sales_order %></td>
+        <td><%= link_to 'Edit', edit_sales_order_path(sales_order) %></td>
+        <td><%= link_to 'Destroy', sales_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales order', new_sales_order_path %>

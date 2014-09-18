@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sales_orders
+
   resources :models
 
   resources :sites
