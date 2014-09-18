@@ -1,27 +1,36 @@
-<h1>Listing sales_orders</h1>
-
-<table>
+<%- model_class = SalesOrder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => SalesOrder %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>So number</th>
-      <th>Vmax</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:so_number) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @sales_orders.each do |sales_order| %>
       <tr>
+        <td><%= sales_order.id %></td>
         <td><%= sales_order.so_number %></td>
-        <td><%= sales_order.vmax %></td>
-        <td><%= link_to 'Show', sales_order %></td>
-        <td><%= link_to 'Edit', edit_sales_order_path(sales_order) %></td>
-        <td><%= link_to 'Destroy', sales_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l sales_order.created_at, format: :long %></td>
+        <td>
+          <%= link_to sales_order_path(sales_order), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to sales_order_path(sales_order), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Sales order', new_sales_order_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sales_order_path,
+            :class => 'btn btn-primary' %>
