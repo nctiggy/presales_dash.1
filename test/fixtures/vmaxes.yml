@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_number: MyString
+  system_name: MyString
+  enginuity_code: MyString
+  target_code: MyString
+  ship_date: 2014-09-18
+  install_date: 2014-09-18
+  esrs_enabled: false
+  contract_number: MyString
+  contract_expiration: 2014-09-18
+  raw_tb: 1
+  engine_count: 1
+  openscale: false
+  site_id: 
+  model_id: 
+
+two:
+  serial_number: MyString
+  system_name: MyString
+  enginuity_code: MyString
+  target_code: MyString
+  ship_date: 2014-09-18
+  install_date: 2014-09-18
+  esrs_enabled: false
+  contract_number: MyString
+  contract_expiration: 2014-09-18
+  raw_tb: 1
+  engine_count: 1
+  openscale: false
+  site_id: 
+  model_id: 
