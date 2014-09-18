@@ -1,74 +1,46 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Vmax -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Vmax %></h1>
+</div>
 
-<p>
-  <strong>Serial number:</strong>
-  <%= @vmax.serial_number %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:serial_number) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.serial_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:system_name) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.system_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:enginuity_code) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.enginuity_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:target_code) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.target_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ship_date) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.ship_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:install_date) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.install_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:esrs_enabled) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.esrs_enabled %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:contract_number) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.contract_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:contract_expiration) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.contract_expiration %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:raw_tb) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.raw_tb %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:engine_count) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.engine_count %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:openscale) %></dt>
+      <dd><pre class="prettyprint"><%= @vmax.openscale %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>System name:</strong>
-  <%= @vmax.system_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              vmaxes_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_vmax_path(@vmax), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              vmax_path(@vmax),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Enginuity code:</strong>
-  <%= @vmax.enginuity_code %>
-</p>
-
-<p>
-  <strong>Target code:</strong>
-  <%= @vmax.target_code %>
-</p>
-
-<p>
-  <strong>Ship date:</strong>
-  <%= @vmax.ship_date %>
-</p>
-
-<p>
-  <strong>Install date:</strong>
-  <%= @vmax.install_date %>
-</p>
-
-<p>
-  <strong>Esrs enabled:</strong>
-  <%= @vmax.esrs_enabled %>
-</p>
-
-<p>
-  <strong>Contract number:</strong>
-  <%= @vmax.contract_number %>
-</p>
-
-<p>
-  <strong>Contract expiration:</strong>
-  <%= @vmax.contract_expiration %>
-</p>
-
-<p>
-  <strong>Raw tb:</strong>
-  <%= @vmax.raw_tb %>
-</p>
-
-<p>
-  <strong>Engine count:</strong>
-  <%= @vmax.engine_count %>
-</p>
-
-<p>
-  <strong>Openscale:</strong>
-  <%= @vmax.openscale %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @vmax.site %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @vmax.model %>
-</p>
-
-<%= link_to 'Edit', edit_vmax_path(@vmax) %> |
-<%= link_to 'Back', vmaxes_path %>
