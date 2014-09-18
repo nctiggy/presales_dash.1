@@ -1,0 +1,24 @@
+<%= simple_form_for(@vmax) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :serial_number %>
+    <%= f.input :system_name %>
+    <%= f.input :enginuity_code %>
+    <%= f.input :target_code %>
+    <%= f.input :ship_date %>
+    <%= f.input :install_date %>
+    <%= f.input :esrs_enabled %>
+    <%= f.input :contract_number %>
+    <%= f.input :contract_expiration %>
+    <%= f.input :raw_tb %>
+    <%= f.input :engine_count %>
+    <%= f.input :openscale %>
+    <%= f.association :site %>
+    <%= f.association :model %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
